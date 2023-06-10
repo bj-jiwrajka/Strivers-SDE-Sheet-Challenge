@@ -18,7 +18,7 @@ If you are interested in participating in the Strivers SDE Sheet - Challenge or 
 ## Connect with Me
 Let's connect and grow together! You can find me on:
 - LinkedIn: [https://www.linkedin.com/in/bijay-jiwrajka-6b308a225/](https://www.linkedin.com/in/bijay-jiwrajka-6b308a225/)
-- Twitter: [bj_jiwrajka](twitter.com/bj_jiwrajka)
+- Twitter: [bj_jiwrajka](https://twitter.com/bj_jiwrajka)
 
 Feel free to reach out if you have any questions or would like to discuss coding, the challenge, or anything related.
 
