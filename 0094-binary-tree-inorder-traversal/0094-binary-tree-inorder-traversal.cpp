@@ -15,17 +15,33 @@ class Solution
         vector<int> inorderTraversal(TreeNode *root)
         {
             vector<int> v;
-            if (!root) return {};
-            vector<int> left = inorderTraversal(root->left);
-            vector<int> right = inorderTraversal(root->right);
-            for (int i = 0; i < left.size(); i++)
+            TreeNode *curr=root;
+            while(curr!=NULL)
             {
-                v.push_back(left[i]);
-            }
-            v.push_back(root->val);
-            for (int i = 0; i < right.size(); i++)
-            {
-                v.push_back(right[i]);
+                if(curr->left)
+                {
+                    TreeNode*prev=curr->left;
+                    while(prev->right  and prev->right!=curr)
+                    {
+                        prev=prev->right;
+                    }
+                    if(prev->right==NULL)
+                    {
+                        prev->right=curr;
+                        curr=curr->left;
+                    }
+                    else
+                    {
+                        prev->right=NULL;
+                        v.push_back(curr->val);
+                        curr=curr->right;
+                    }
+                }
+                else
+                {
+                     v.push_back(curr->val);
+                    curr=curr->right;
+                }
             }
             return v;
         }
