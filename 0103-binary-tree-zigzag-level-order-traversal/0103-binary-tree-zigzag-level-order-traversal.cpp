@@ -14,36 +14,22 @@ class Solution
     public:
         vector<vector < int>> zigzagLevelOrder(TreeNode *root)
         {
-            vector<vector < int>> ans;
+           vector<vector < int>> ans;
             if (!root) return ans;
-            queue<pair<TreeNode*, int>> q;
-            map<int, vector < int>> mp;
-            q.push({ root,
-                0 });
-            while (!q.empty())
-            {
-                TreeNode *temp = q.front().first;
-                int level = q.front().second;
-                mp[level].push_back(temp->val);
-                q.pop();
-                if (temp->left)
-                {
-                    q.push({ temp->left,
-                        level + 1 });
-                }
-                if (temp->right)
-                {
-                    q.push({ temp->right,
-                        level + 1 });
-                }
-            }
+            queue<TreeNode*>q;
+            q.push(root);
             bool chk=0;
-            for (auto it: mp)
+            while(!q.empty())
             {
+                int len=q.size();
                 vector<int> v;
-                for (auto i: it.second)
+                for(int i=0;i<len;i++)
                 {
-                    v.push_back(i);
+                    auto node= q.front();
+                    v.push_back(node->val);
+                    if(node->left) q.push(node->left);
+                    if(node->right) q.push(node->right);
+                    q.pop();
                 }
                 if(chk) reverse(v.begin(),v.end());
                 chk=!chk;
