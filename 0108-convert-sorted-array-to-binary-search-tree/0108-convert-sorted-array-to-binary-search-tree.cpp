@@ -15,7 +15,7 @@ class Solution
         TreeNode* sortedArrayToBST(vector<int> &nums)
         {
             if (nums.size() == 0) return NULL;
-            if (nums.size() == 1) return new TreeNode(nums[0]);
+            // if (nums.size() == 1) return new TreeNode(nums[0]);
             int mid = nums.size() / 2;
             int n=nums.size();
             TreeNode *root = new TreeNode(nums[mid]);
