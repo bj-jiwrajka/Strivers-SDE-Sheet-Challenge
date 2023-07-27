@@ -17,7 +17,7 @@ class Solution {
 	            {
 	                if(matrix[j][k]==-1)
 	                matrix[j][k]=1e9;
-	                if(j==k)matrix[j][k]=0;
+	               // if(j==k)matrix[j][k]=0;
 	            }
 	        }
 	    for(int i=0;i<n;i++)
@@ -26,7 +26,7 @@ class Solution {
 	        {
 	            for(int k=0;k<n;k++)
 	            {
-	               // if(matrix[j][k]!=-1)
+	 
 	                matrix[j][k]=min(matrix[j][k],matrix[j][i]+matrix[i][k]);
 	            }
 	        }
